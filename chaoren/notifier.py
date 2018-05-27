@@ -35,17 +35,17 @@ class Notifier(object):
         self.notifiers = []
         self.brain = brain
 
-        if 'email' in profile and \
-           ('enable' not in profile['email'] or profile['email']['enable']):
-            self.notifiers.append(self.NotificationClient(
-                self.handleEmailNotifications, None))
-        else:
-            self._logger.debug('email account not set ' +
-                               'in profile, email notifier will not be used')
-
-        if 'robot' in profile and profile['robot'] == 'emotibot':
-            self.notifiers.append(self.NotificationClient(
-                self.handleRemenderNotifications, None))
+        # if 'email' in profile and \
+        #    ('enable' not in profile['email'] or profile['email']['enable']):
+        #     self.notifiers.append(self.NotificationClient(
+        #         self.handleEmailNotifications, None))
+        # else:
+        #     self._logger.debug('email account not set ' +
+        #                        'in profile, email notifier will not be used')
+        #
+        # if 'robot' in profile and profile['robot'] == 'emotibot':
+        #     self.notifiers.append(self.NotificationClient(
+        #         self.handleRemenderNotifications, None))
 
         sched = BackgroundScheduler(daemon=True)
         sched.start()
