@@ -9,8 +9,8 @@ LIB_PATH = os.path.join(APP_PATH, "chaoren")
 TEMP_PATH = os.path.join(DATA_PATH, "temp")
 LOG_PATH = os.path.join(DATA_PATH,"logs")
 STATIC_PATH = os.path.join(DATA_PATH, "static")
-PLUGIN_PATH = os.path.join(LIB_PATH, "plugins")
-LOGIN_PATH = os.path.join(DATA_PATH, "login")
+PLUGIN_PATH = os.path.join(APP_PATH, "plugins")
+LOGIN_PATH = os.path.join(PLUGIN_PATH, "login")
 
 CONFIG_PATH = os.path.expanduser(
     os.getenv('DINGDANG_CONFIG', '~/.chaoren')
