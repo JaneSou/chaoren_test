@@ -10,6 +10,7 @@ import wave
 import audioop
 import time
 import pyaudio
+from . import mute_alsa
 from . import chaorenpath
 from .app_utils import wechatUser
 from . import config
@@ -44,6 +45,7 @@ class Mic:
                           "can usually be safely ignored.")
         try:
             asound = ctypes.cdll.LoadLibrary('libasound.so.2')
+            asound.snd_lib_error_set_handler(mute_alsa.c_error_handler)
         except OSError:
             pass
         self._audio = pyaudio.PyAudio()

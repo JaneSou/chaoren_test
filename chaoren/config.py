@@ -20,7 +20,7 @@ def init(config_name='profile.yml'):
 
     # Check if config dir is writable
     if not os.access(chaorenpath.CONFIG_PATH, os.W_OK):
-        _logger.critical("Config dir %s is not writable. Dingdang " +
+        _logger.critical("Config dir %s is not writable. Chaoren " +
                          "won't work correctly.",
                          chaorenpath.CONFIG_PATH)
 

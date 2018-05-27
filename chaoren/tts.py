@@ -1,6 +1,6 @@
 # -*- coding: utf-8-*-
 """
-A Speaker handles audio output from Dingdang to the user
+A Speaker handles audio output from chaoren to the user
 
 Speaker methods:
     say - output 'phrase' as speech
@@ -144,14 +144,8 @@ class AbstractMp3TTSEngine(AbstractTTSEngine):
 class BaiduTTS(AbstractMp3TTSEngine):
     """
     使用百度语音合成技术
-    要使用本模块, 首先到 yuyin.baidu.com 注册一个开发者账号,
-    之后创建一个新应用, 然后在应用管理的"查看key"中获得 API Key 和 Secret Key
-    填入 profile.yml 中.
-    ...
-        baidu_yuyin: 'AIzaSyDoHmTEToZUQrltmORWS4Ott0OHVA62tw8'
-            api_key: 'LMFYhLdXSSthxCNLR7uxFszQ'
-            secret_key: '14dbd10057xu7b256e537455698c0e4e'
-        ...
+    要使用本模块, 首先到 yuyin.baidu.com 注册一个开发者账号,在应用管理的"查看key"中获得 API Key 和 Secret Key
+    填入 profile.yml 中
     """
 
     SLUG = "baidu-tts"
@@ -281,7 +275,7 @@ def get_engines():
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Dingdang TTS module')
+    parser = argparse.ArgumentParser(description='Chaoren TTS module')
     parser.add_argument('--debug', action='store_true',
                         help='Show debug messages')
     args = parser.parse_args()
