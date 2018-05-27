@@ -421,7 +421,7 @@ class JuliusVocabulary(AbstractVocabulary):
         prefix = 'chaoren'
         tmpdir = tempfile.mkdtemp()
 
-        lexicon_file = chaorenpath.static('julius-stt', 'VoxForge.tgz')
+        lexicon_file = chaorenpath.data('static','julius-stt', 'VoxForge.tgz')
         lexicon_archive_member = 'VoxForge/VoxForgeDict'
         profile_path = chaorenpath.config('profile.yml')
         if os.path.exists(profile_path):
