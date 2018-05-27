@@ -421,7 +421,7 @@ class JuliusVocabulary(AbstractVocabulary):
         prefix = 'chaoren'
         tmpdir = tempfile.mkdtemp()
 
-        lexicon_file = chaorenpath.data('static','julius-stt', 'VoxForge.tgz')
+        lexicon_file = chaorenpath.data('static/julius-stt', 'VoxForge.tgz')
         lexicon_archive_member = 'VoxForge/VoxForgeDict'
         profile_path = chaorenpath.config('profile.yml')
         if os.path.exists(profile_path):
@@ -500,7 +500,7 @@ def get_keyword_phrases():
     """
     phrases = []
 
-    with open(chaorenpath.data('static','keyword_phrases'), mode="r") as f:
+    with open(chaorenpath.data('static/keyword_phrases'), mode="r") as f:
         for line in f:
             phrase = line.strip()
             if phrase:

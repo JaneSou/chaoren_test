@@ -46,4 +46,4 @@ def beforeListen(mic, profile, wxbot=None):
 
 
 def afterListen(mic, profile, wxbot=None):
-    mic.play_no_block(chaorenpath.data('static','audio', 'beep_lo.wav'))
+    mic.play_no_block(chaorenpath.data('static/audio', 'beep_lo.wav'))
