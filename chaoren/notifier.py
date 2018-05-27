@@ -8,7 +8,6 @@ import time
 
 from apscheduler.schedulers.background import BackgroundScheduler
 
-from plugins import dltEmail
 from . import app_utils
 
 if sys.version_info < (3, 0):
