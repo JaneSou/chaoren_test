@@ -1,12 +1,16 @@
 # -*- coding: utf-8-*-
 from __future__ import absolute_import
+
 import atexit
-from .plugins import Email
-from apscheduler.schedulers.background import BackgroundScheduler
 import logging
-from . import app_utils
-import time
 import sys
+import time
+
+from apscheduler.schedulers.background import BackgroundScheduler
+
+from plugins import Email
+from . import app_utils
+
 if sys.version_info < (3, 0):
     import Queue as queue  # Python 2
 else:
