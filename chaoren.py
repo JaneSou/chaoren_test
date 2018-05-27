@@ -93,7 +93,7 @@ if __name__ == "__main__":
 *            指导老师：沈翠新                              *
 *******************************************************
 
-如需查看log，可以执行 `tail -f 语音助手所在目录/temp/chaoren.log`
+如需查看log，可以执行 `tail -f 语音助手所在目录/data/temp/chaoren.log`
 
 ''')
 
@@ -105,7 +105,7 @@ if __name__ == "__main__":
     else:
         logging.basicConfig(
             filename=os.path.join(
-                chaorenpath.TEMP_PATH, "chaoren.log"
+                chaorenpath.DATA_PATH, "logs/chaoren.log"
             ),
             filemode="w",
             format='%(asctime)s %(filename)s[line:%(lineno)d] '
