@@ -34,27 +34,27 @@ def handle(text, mic, profile, wxbot=None):
     usb_camera = False
     # read config
     if profile[SLUG] and 'enable' in profile[SLUG] and \
-       profile[SLUG]['enable']:
+            profile[SLUG]['enable']:
         if 'count_down' in profile[SLUG] and \
-           profile[SLUG]['count_down'] > 0:
+                        profile[SLUG]['count_down'] > 0:
             count_down = profile[SLUG]['count_down']
         if 'quality' in profile[SLUG] and \
-           profile[SLUG]['quality'] > 0:
+                        profile[SLUG]['quality'] > 0:
             quality = profile[SLUG]['quality']
         if 'dest_path' in profile[SLUG] and \
-           profile[SLUG]['dest_path'] != '':
+                        profile[SLUG]['dest_path'] != '':
             dest_path = profile[SLUG]['dest_path']
         if 'vertical_flip' in profile[SLUG] and \
-           profile[SLUG]['vertical_flip']:
+                profile[SLUG]['vertical_flip']:
             vertical_flip = True
         if 'horizontal_flip' in profile[SLUG] and \
-           profile[SLUG]['horizontal_flip']:
+                profile[SLUG]['horizontal_flip']:
             horizontal_flip = True
         if 'send_to_user' in profile[SLUG] and \
-           not profile[SLUG]['send_to_user']:
+                not profile[SLUG]['send_to_user']:
             send_to_user = False
         if 'sound' in profile[SLUG] and \
-           not profile[SLUG]['sound']:
+                not profile[SLUG]['sound']:
             sound = False
         if 'usb_camera' in profile[SLUG] and \
                 profile[SLUG]['usb_camera']:
@@ -71,14 +71,14 @@ def handle(text, mic, profile, wxbot=None):
         if usb_camera:
             command = "fswebcam --no-banner -r 1024x765 -q "
             if vertical_flip:
-                command = command+' -s v '
+                command = command + ' -s v '
             if horizontal_flip:
-                command = command+'-s h '
-            command = command+dest_file
+                command = command + '-s h '
+            command = command + dest_file
         else:
             command = ['raspistill', '-o', dest_file, '-q', str(quality)]
             if count_down > 0 and sound:
-                command.extend(['-t', str(count_down*1000)])
+                command.extend(['-t', str(count_down * 1000)])
             if vertical_flip:
                 command.append('-vf')
             if horizontal_flip:
@@ -98,10 +98,11 @@ def handle(text, mic, profile, wxbot=None):
             mic.play(mic.dingdangpath.data('audio', 'camera.wav'))
         # send to user
         if send_to_user:
-            target = '邮箱'
-            if wxbot is not None and wxbot.my_account != {} and \
-               ('prefers_email' not in profile or
-               not profile['prefers_email']):
+            #            target = '邮箱'
+            # if wxbot is not None and wxbot.my_account != {} and \
+            #         ('prefers_email' not in profile or
+            #              not profile['prefers_email']):
+            if wxbot is not None and wxbot.my_account != {}:
                 target = '微信'
             if sound:
                 mic.say(u'拍照成功！正在发送照片到您的%s' % target, cache=True)
