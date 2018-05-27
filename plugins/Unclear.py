@@ -42,7 +42,7 @@ def isValid(text):
 
 
 def beforeListen(mic, profile, wxbot=None):
-    mic.play(chaorenpath.data('static','audio', 'beep_hi.wav'))
+    mic.play(chaorenpath.data('static/audio', 'beep_hi.wav'))
 
 
 def afterListen(mic, profile, wxbot=None):
