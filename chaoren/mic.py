@@ -32,7 +32,7 @@ class Mic:
         acive_stt_engine -- performs STT while Dingdang is in active listen
                             mode
         """
-        self.robot_name = config.get('robot_name_cn', u'叮当')
+        self.robot_name = config.get('robot_name_cn', u'超人')
         self._logger = logging.getLogger(__name__)
         self.speaker = speaker
         self.wxbot = None
@@ -358,7 +358,7 @@ class Mic:
             self.speaker.say(phrase, cache)
         else:
             self.speaker.say(phrase)
-        time.sleep(1)  # 避免叮当说话时误唤醒
+        time.sleep(1)  # 避免chaoren说话时误唤醒
         self.stop_passive = False
 
     def play(self, src):

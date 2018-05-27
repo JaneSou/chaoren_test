@@ -1234,6 +1234,7 @@ class WXBot:
             # img.show()
         elif self.conf['qr'] == 'tty':
             qr.png(qr_file_path, scale=8)
+            qr.png(qr_file_path, scale=8)
             print(qr.terminal(quiet_zone=1))
 
     def do_request(self, url):
