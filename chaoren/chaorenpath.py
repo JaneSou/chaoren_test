@@ -8,6 +8,8 @@ DATA_PATH = os.path.join(APP_PATH, "data")
 LIB_PATH = os.path.join(APP_PATH, "chaoren")
 LOGIN_PATH = os.path.join(APP_PATH, "login")
 TEMP_PATH = os.path.join(DATA_PATH, "temp")
+LOG_PATH = os.path.join(DATA_PATH,"logs")
+STATIC_PATH = os.path.join(DATA_PATH, "static")
 PLUGIN_PATH = os.path.join(LIB_PATH, "plugins")
 
 CONFIG_PATH = os.path.expanduser(

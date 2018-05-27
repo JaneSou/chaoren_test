@@ -105,7 +105,7 @@ if __name__ == "__main__":
     else:
         logging.basicConfig(
             filename=os.path.join(
-                chaorenpath.DATA_PATH, "logs/chaoren.log"
+                chaorenpath.LOG_PATH, "logs/chaoren.log"
             ),
             filemode="w",
             format='%(asctime)s %(filename)s[line:%(lineno)d] '
