@@ -500,7 +500,7 @@ def get_keyword_phrases():
     """
     phrases = []
 
-    with open(chaorenpath.static('keyword_phrases'), mode="r") as f:
+    with open(chaorenpath.data('static','keyword_phrases'), mode="r") as f:
         for line in f:
             phrase = line.strip()
             if phrase:
