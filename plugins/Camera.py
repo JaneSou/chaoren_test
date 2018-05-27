@@ -95,7 +95,7 @@ def handle(text, mic, profile, wxbot=None):
                 mic.say(u"拍照失败，请检查相机是否连接正确", cache=True)
             return
         if sound:
-            mic.play(mic.dingdangpath.static('audio', 'camera.wav'))
+            mic.play(mic.dingdangpath.data('audio', 'camera.wav'))
         # send to user
         if send_to_user:
             if wxbot is not None and wxbot.my_account != {}:
